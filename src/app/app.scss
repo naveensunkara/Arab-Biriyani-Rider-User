@@ -20,7 +20,7 @@ ion-menu{
         button.item-md{
             background: transparent;
             color: white;
-            font-size: 2rem;
+            font-size: $largeFont;
             &[indicate="active"]{
                 background: #6b0082;
             }
@@ -33,4 +33,10 @@ ion-menu{
 .alert-md .alert-wrapper{
     max-width: 100%;
     width: 80%;
+}
+.regularFont{
+    font-size: 1.8rem !important;
+}
+.largeFont{
+    font-size: 2rem !important;
 }

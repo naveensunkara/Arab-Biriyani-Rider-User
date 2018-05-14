@@ -23,13 +23,7 @@ page-notification{
             .card-content{
                 p{
                     color: #333;
-                    font-size: 1.8rem;
-                    .amount{
-                        display: inline-block;
-                        font-size: 3.5rem; 
-                        color: #000;
-                        font-weight: bold;
-                    }
+                    font-size: $regularFont;
                 }
             }
         }

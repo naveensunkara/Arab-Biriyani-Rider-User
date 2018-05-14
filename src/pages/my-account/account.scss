@@ -15,7 +15,7 @@ page-my-account {
                 button {
                     background: #fea20f;
                     color: #333;
-                    font-size: 2rem;
+                    font-size: $largeFont;
                     font-weight: 700;
                     height: 6rem;
                     margin:0px;
@@ -51,11 +51,11 @@ page-my-account {
                 }
                 ion-card-content {
                     ion-label {
-                        font-size: 1.8rem;
+                        font-size: $regularFont;
                         color: #95989a;
                     }
                     h1 {
-                        font-size: 2rem;
+                        font-size: $largeFont;
                         margin-bottom: 1rem
                     }
                 }

@@ -10,7 +10,7 @@ page-rider-user{
                     width: 20px;
                     height: 20px;
                     border-radius: 50%;
-                    font-size: 1.1rem;
+                    font-size: $badgeFont;
                     position: absolute;
                     top: 0;
                     right: 2px;
@@ -48,7 +48,7 @@ page-rider-user{
         padding-bottom: 0 !important;
         table {
             text-align: center;
-            font-size: 2.25rem;
+            font-size: $largeFont;
             th{
                 font-weight: normal;
                 color: #95989a;
@@ -64,7 +64,7 @@ page-rider-user{
             td {
                 color: #5e5e5e;
                 font-weight: 700;
-                font-size: 2.5rem;
+                font-size: $largeFont;
                 &:first-child {
                     text-align: left;
                 }
@@ -87,11 +87,11 @@ page-rider-user{
             h1{
                 color: white;
                 font-weight: bold;
-                font-size: 2.6rem;
+                font-size: $largeFont;
             }
             h3{
                 color: white; 
-                font-size: 2rem;
+                font-size: $largeFont;
                 margin-bottom: 16px;
                 white-space: nowrap; 
             }
@@ -112,6 +112,7 @@ page-rider-user{
             z-index: 999;
             position: relative;
             padding: 0 16px;
+            min-height: 130px;
         }
     }
 }
