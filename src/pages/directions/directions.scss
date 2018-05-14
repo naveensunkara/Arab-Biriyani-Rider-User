@@ -1,0 +1,34 @@
+page-directions {
+    ion-toolbar{
+        .toolbar-content{
+            display: flex;
+            .button-md{
+                background: transparent;
+                box-shadow: none;
+                position: absolute;
+                top: 8px;
+                z-index: 10;
+                ion-badge.badge-md{
+                    padding: 4px 0;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    font-size: 1.1rem;
+                    position: absolute;
+                    top: 0;
+                    right: 2px;
+                }
+            }
+        }
+    }
+    #map{
+        height: 100%;
+    }
+    ion-footer{
+        button.button-md{
+            margin: 0;
+            height: 56px;
+            background: #6b0082;
+        }
+    }
+}

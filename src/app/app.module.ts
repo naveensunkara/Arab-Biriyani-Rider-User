@@ -10,7 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Items } from '../mocks/providers/items';
-import { Settings, User, Api, ShareService } from '../providers';
+import { Settings, User, Api } from '../providers';
 import { MyApp } from './app.component';
 
 
@@ -63,7 +63,6 @@ export function provideSettings(storage: Storage) {
     Camera,
     SplashScreen,
     StatusBar,
-    ShareService,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

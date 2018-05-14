@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, NavController, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, ViewController, AlertController } from 'ionic-angular';
 import { PopoverController, NavParams } from 'ionic-angular';
 
 @IonicPage()
@@ -10,6 +10,8 @@ import { PopoverController, NavParams } from 'ionic-angular';
 
 export class RiderUserPage {
     displayType: any = 'live';
+    status: any = 'Ready for Delivery';
+    buttonStatus: any = "Received Package";
     live: any = [
         {
             order: 'Order # 1100011',
@@ -74,25 +76,58 @@ export class RiderUserPage {
             quantity: '100'
         }
     ]
-    constructor(public navCtrl: NavController, public popoverCtrl: PopoverController) { }
-    slider(item, type){
+    constructor(public navCtrl: NavController, public popoverCtrl: PopoverController, public alert: AlertController) { }
+    slider(item, type) {
         let index = this.live.indexOf(item);
-        if(this.live[index].sliderMargin == undefined || this.live[index].sliderMargin == '-130px -16px 0'){
+        if (this.live[index].sliderMargin == undefined || this.live[index].sliderMargin == '-130px -16px 0') {
             this.live[index].sliderContent = true;
             this.live[index].sliderMargin = '0 -16px 0';
             this.live[index].sliderType = type;
         }
-        else{
+        else {
             this.live[index].sliderMargin = '-130px -16px 0';
         }
     }
-    openPage(page){
+    openPage(page) {
         this.navCtrl.push(page);
+    }
+    statusChange() {
+        if (this.buttonStatus == "Mark as Delivered")
+            this.confirm();
+        this.status = "Out for Delivery";
+        this.buttonStatus = "Mark as Delivered";
     }
     presentPopover(myEvent) {
         let popover = this.popoverCtrl.create('RiderPopPage');
         popover.present({
             ev: myEvent
         });
+    }
+    direction(address){
+        this.navCtrl.push('DirectionsPage');
+    }
+    confirm() {
+        let alert = this.alert.create({
+            title: 'Confirm Delivery Status',
+            message: 'Click OK to Move to completed?',
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: () => {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'OK',
+                    handler: () => {
+                        setTimeout(() => {
+                            this.live.splice(0,1);
+                        }, 500);
+                    }
+                }
+            ]
+        });
+        alert.present();
     }
 }

@@ -1,10 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { Config, Nav, Platform, Events } from 'ionic-angular';
+import { Config, Nav, Platform } from 'ionic-angular';
 
 import { FirstRunPage } from '../pages';
-import { Settings, ShareService } from '../providers';
+import { Settings } from '../providers';
 
 @Component({
   template: `<ion-menu [content]="content" [swipeEnabled]="swipe" persistent="true">
@@ -29,36 +29,15 @@ export class MyApp {
   rootPage = FirstRunPage;
   swipe: boolean = false;
   @ViewChild(Nav) nav: Nav;
-
-  branch: any[] = [
-    { title: 'Menu', component: 'MenuPage', class: 'inactive' },
-    { title: 'My Orders', component: 'OrderPage', class: 'inactive' },
-    { title: 'Payment History', component: 'PaymentHistoryPage', class: 'inactive' },
-    { title: 'My Account', component: 'AccountPage', class: 'inactive' },
-    { title: 'Notification', component: 'NotificationPage', class: 'inactive' },
-    { title: 'Chat', component: 'ChatPage', class: 'inactive' },
-    { title: 'Support', component: 'KitchenOrdersPage', class: 'inactive' },
-    { title: 'Log Out', component: 'LoginPage', class: 'inactive' }
-  ];
   
-  riderBranch: any[] = [
-    { title: 'Delivery Orders', component: 'RiderDeliveryPage', class: 'inactive' },
-    { title: 'Manage Vessels', component: 'VesselsPage', class: 'inactive' },
-    { title: 'My Account', component: 'AccountPage', class: 'inactive' },
-    { title: 'Notification', component: 'NotificationPage', class: 'inactive' },
-    { title: 'Log Out', component: 'LoginPage', class: 'inactive' }
-  ];
-  
-  riderUser: any[] = [
+  pages: any[] = [
     { title: 'Assigned Orders', component: 'RiderUserPage', class: 'inactive' },
     { title: 'My Account', component: 'AccountPage', class: 'inactive' },
     { title: 'Notification', component: 'NotificationPage', class: 'inactive' },
     { title: 'Log Out', component: 'LoginPage', class: 'inactive' }
   ];
-  //pages: any[] = this[this.share.getUser()];
-  pages: any[] = this.riderUser;
   
-  constructor(platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen, private share: ShareService, events: Events) {
+  constructor(platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
     //this.pages[0].class = 'active';
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -66,9 +45,6 @@ export class MyApp {
       this.statusBar.styleDefault();
       this.statusBar.backgroundColorByHexString('#5c0070');
       this.splashScreen.hide();
-    });
-    events.subscribe('shareObject', (dummy, dummyNumber) => {
-      console.log('Welcome', dummy, 'at', dummyNumber);
     });
   }
 openPage(page) {

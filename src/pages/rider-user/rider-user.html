@@ -24,7 +24,7 @@
             <ion-card no-margin *ngFor="let item of live">
                 <ion-card-header (click)="slider(item,'recieved')">
                     <h1 class="orderId">{{item.order}}</h1>
-                    <ion-badge item-end *ngIf="item.status == 'ready'" class="ready">READY FOR DELIVERY</ion-badge>
+                    <ion-badge item-end *ngIf="item.status == 'ready'" class="ready">{{status}}</ion-badge>
                     <ion-badge item-end *ngIf="item.status == 'packing'" class="packing">PACKING</ion-badge>
                 </ion-card-header>
                 <ion-card-content>
@@ -71,8 +71,8 @@
                                 <h3>Order Summary</h3>
                                 <h1>CB X 1</h1>
                                 <h1>MB X 1</h1>
-                                <button ion-button small round class="reorder" (click)="openPage('RiderOrderSummaryUserPage')">
-                                    Recieved Packet
+                                <button ion-button small round class="reorder disable-hover" (click)="statusChange()">
+                                    {{buttonStatus}}
                                 </button>
                             </div>
                     </div>
