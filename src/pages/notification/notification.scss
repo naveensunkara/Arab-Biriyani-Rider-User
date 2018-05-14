@@ -22,11 +22,8 @@ page-notification{
             }
             .card-content{
                 p{
-                    &.date{
-                        margin-top: 40px;
-                    }
-                    color: #95989a;
-                    font-size: 1.6rem;
+                    color: #333;
+                    font-size: 1.8rem;
                     .amount{
                         display: inline-block;
                         font-size: 3.5rem; 
