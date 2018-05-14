@@ -1,0 +1,8 @@
+{
+  "name": "Arab-Biriyani-Rider-User",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
