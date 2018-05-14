@@ -1,0 +1,82 @@
+<ion-header>
+    <ion-toolbar>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title text-center>Order Summary</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <ion-card no-margin>
+        <ion-card-header>
+            <h1 class="orderId">{{item.order}}</h1>
+            <ion-badge item-end class="ready">OUT FOR DELIVERY</ion-badge>
+        </ion-card-header>
+        <ion-card-content>
+            <div class="slideHeader">
+                <table width="100%" margin-bottom>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Qty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{item.branch}}</td>
+                            <td>{{item.quantity}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <button ion-button icon-left small round class="reorder" margin-bottom>
+                    <ion-icon name="md-call"></ion-icon>
+                    CALL
+                </button>
+                <button ion-button small round class="trackorder" float-right icon-left>
+                    <ion-icon name="md-pin"></ion-icon>
+                    LOCATION
+                </button> -->
+            </div>
+            <div class="items" padding-vertical>
+                <h3>Order Summary</h3>
+                <div>
+                    <h1>Chicken Biriyani</h1>
+                    <h1 text-right>x 100</h1>
+                </div>
+                <div>
+                    <h1>Mutton Biriyani</h1>
+                    <h1 text-right>x 100</h1>
+                </div>
+                <div>
+                    <h1>Egg Biriyani</h1>
+                    <h1 text-right>x 80</h1>
+                </div>
+                <br>
+                <h3>Delivery Address</h3>
+                <div>
+                    <h1>438 Serangoon Rd</h1>
+                    <h1 text-right>
+                        <button ion-button small round class="trackorder" float-right icon-left>
+                            Directions
+                        </button>
+                    </h1>
+                </div>
+                <br>
+                <h3>Contact No</h3>
+                <div>
+                    <h1>+65 9834 9935</h1>
+                    <h1 text-right>
+                        <button ion-button small round class="trackorder" float-right icon-left>
+                            Call
+                        </button>
+                    </h1>
+                </div>
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+<ion-footer>
+    <ion-toolbar>
+        <button ion-button block (click)="presentToast()">Mark as Delivered</button>
+    </ion-toolbar>
+</ion-footer>
